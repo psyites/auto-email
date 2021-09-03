@@ -11,12 +11,13 @@
     alert("We will now send an email to psyites containing this information. Please do not close this page whilst such email is sent. Once done, you'll see a prompt like this.");
     document.getElementById("status").innerHTML = "Sending automatic email, please wait.";
     console.log("Required data collected.\nPlan = " + plan + "\nDomain = " + domain);
+    var body = "New website registration request\nPlan of choice: " + plan + "\nDomain of choice: " + domain;
     Email.send({
     SecureToken : "c8b329be-a03a-4655-a213-12cb700538cb",
     To : 'mail@psyites.tk',
     From : "psyites@gmail.com",
     Subject : "New Psyites Ticket via Auto Email System",
-    Body : "New website registration request\nPlan of choice: " + plan + "\nDomain of choice: " + domain
+    Body : body
 }).then(
   message => alert(message)
 );    
