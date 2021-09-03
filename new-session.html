@@ -1,17 +1,24 @@
 <html>
   
   <h1 id="status">Please read the prompts.</h1>
-  
+  <h1 id="status-green" style="color:green"></h1>
+  <p id="small-txt"></p>
   
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 
   <script>
+    // Gather required info
     var plan = window.prompt("Which plan would you like to register for?");
     var domain = window.prompt("What domain would you prefer to have?");
+    var contemail = window.prompt("What email should we contact you by?");
     alert("We will now send an email to psyites containing this information. Please do not close this page whilst such email is sent. Once done, you'll see a prompt like this.");
     document.getElementById("status").innerHTML = "Sending automatic email, please wait.";
     console.log("Required data collected.\nPlan = " + plan + "\nDomain = " + domain);
-    var body = "New website registration request\nPlan of choice: " + plan + "\nDomain of choice: " + domain;
+    
+    // Set body as variable
+    var body = "New registration via automatic system. Requested plan is " + plan + ",the requested domain is " + domain + " and the contact email is " + contemail + ".";
+    
+    // Send the email
     Email.send({
     SecureToken : "c8b329be-a03a-4655-a213-12cb700538cb",
     To : 'mail@psyites.tk',
@@ -19,7 +26,12 @@
     Subject : "New Psyites Ticket via Auto Email System",
     Body : body
 }).then(
-  message => alert(message)
+  message => alert("Message has been sent. Here's the outcome:" + message), // Alert user the outcome
 );    
+
+// Configure heading to be green                                                            
+    document.getElementById("status").innerHTML = "";
+    document.getElementById("status-green").innerHTML = "The email has been sent! You can now exit this page.";
     
+    document.getElementById("small-txt").innerHTML = "Did the last message say otherwise? We recommend trying again or contacting support.";
 </script>
