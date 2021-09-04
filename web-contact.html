@@ -15,6 +15,7 @@
     {
       email = document.getElementById("email-input").value;
       message = document.getElementById("message-input").value;
+      alert("We will now send the message: \"" + message + "\". Press OK to begin.");
       sendmail();
     }
     function sendmail()
@@ -26,7 +27,7 @@
     Subject : "New automatic message from " + email,
     Body : "New message from " + email + ": " + message
     }).then(
-    message => alert(message)
+    message => alert("Message sent. Here's the outcome: " + message)
     );
     }
     
