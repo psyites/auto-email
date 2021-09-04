@@ -5,10 +5,18 @@
         font-family: Microsoft JhengHei
       }
     </style>
+    
+      
+  <script> 
+    function submit()
+    {
+      var email = document.GetElementById("email").value;
+      alert("Email is " + email);
+    }
+  </script>
   </head>
   
   <body>
-    
     <center>
       <h1>Psyites Web Contact System</h1>
       <p>Contact us by filling in the form below.</p>
@@ -17,12 +25,4 @@
       <button onclick="submit()" id="btn">Done</button>
     </center>
   </body>
-  
-  <script> 
-    function submit()
-    {
-      var email = document.GetElementById("email").value;
-      alert("Email is " + email);
-    }
-  </script>
 </html>
