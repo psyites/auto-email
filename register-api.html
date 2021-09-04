@@ -1,0 +1,28 @@
+<html>
+
+<h1>Psyites Registration API</h1>
+<p id='params'>Paramaters will go here</p>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+var plan = urlParams.get('plan');
+var domain = urlParams.get('domain');
+var email = urlParams.get('email');
+var body = "API Request; Plan: " + plan + "; Domain: " + domain + "; Contact Email: " + email + ".";
+document.getElementById("params").innerHTML = "Plan: " + plan + "; Domain: " + domain + "; Contact Email: " + email + ";";
+
+Email.send({
+    SecureToken : "14eb4bfa-16d7-4f1c-970f-664dc1260c88",
+    To : 'mail@psyites.tk',
+    From : "psyites.web@gmail.com",
+    Subject : "New Psyites Registration via API",
+    Body : body
+    }).then(
+    message => alert("Message sent via API. Here's the outcome: " + message),
+    );
+</script>
+</html>
