@@ -17,6 +17,15 @@
     {
       var email = document.getElementById("email-input").value;
       var message = document.getElementById("message-input").value;
+      Email.send({
+    SecureToken : "590bc4fb-0972-4a68-bdcf-b34e4e944f8a",
+    To : 'mail@psyites.tk',
+    From : "psyites.temp@outlook.com",
+    Subject : "New automatic message from " + email,
+    Body : "New message from " + email + ": " + message;
+    }).then(
+    message => alert(message)
+    );
     }
   </script>
   </head>
@@ -26,9 +35,10 @@
       <h1>Psyites Web Contact System</h1>
       <p>Contact us by filling in the form below.</p>
       <input id="email-input" placeholder="Enter email here">
+      <br>
       <input id="message-input" placeholder="Enter message here">
       <br>
-      <button onclick="fn()">Done</button>
+      <button onclick="fn()">Submit</button>
     </center>
   </body>
 </html>
