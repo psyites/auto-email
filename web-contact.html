@@ -9,11 +9,12 @@
 <script src="https://smtpjs.com/v3/smtp.js"></script>
     
   <script> 
-    alert("in");
+    var email = "null";
+    var message = "null";
     function fn()
     {
-      var email = document.getElementById("email-input").value;
-      var message = document.getElementById("message-input").value;
+      email = document.getElementById("email-input").value;
+      message = document.getElementById("message-input").value;
       sendmail();
     }
     function sendmail()
