@@ -1,17 +1,22 @@
 <html>
   <head>
     <style>
+      #message-input {
+        height:200px;
+      }
       h1, p {
         font-family: Microsoft JhengHei
       }
     </style>
       
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+    
   <script> 
     alert("in");
     function fn()
     {
       var email = document.getElementById("email-input").value;
-      alert("Email is " + email);
+      var message = document.getElementById("message-input").value;
     }
   </script>
   </head>
@@ -21,6 +26,7 @@
       <h1>Psyites Web Contact System</h1>
       <p>Contact us by filling in the form below.</p>
       <input id="email-input" placeholder="Enter email here">
+      <input id="message-input" placeholder="Enter message here">
       <br>
       <button onclick="fn()">Done</button>
     </center>
