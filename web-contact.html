@@ -1,9 +1,6 @@
 <html>
   <head>
     <style>
-      #message-input {
-        height:200px;
-      }
       h1, p {
         font-family: Microsoft JhengHei
       }
@@ -17,16 +14,21 @@
     {
       var email = document.getElementById("email-input").value;
       var message = document.getElementById("message-input").value;
+      sendmail();
+    }
+    function sendmail()
+    {
       Email.send({
     SecureToken : "590bc4fb-0972-4a68-bdcf-b34e4e944f8a",
     To : 'mail@psyites.tk',
     From : "psyites.temp@outlook.com",
     Subject : "New automatic message from " + email,
-    Body : "New message from " + email + ": " + message;
+    Body : "New message from " + email + ": " + message
     }).then(
     message => alert(message)
     );
     }
+    
   </script>
   </head>
   
