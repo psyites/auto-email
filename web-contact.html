@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <style>
+      h1, p {
+        font-family: Microsoft JhengHei
+      }
+    </style>
+  </head>
+  
+  <body>
+    
+    <center>
+      <h1>Psyites Web Contact System</h1>
+      <p>Contact us by filling in the form below.</p>
+      <input id="email" placeholder="Enter email here">
+      <br>
+      <button onclick="submit()" id="btn">Done</button>
+    </center>
+  </body>
+  
+  <script> 
+    function submit()
+    {
+      var email = document.GetElementById("email").value;
+      alert("Email is " + email);
+    }
+  </script>
+</html>
