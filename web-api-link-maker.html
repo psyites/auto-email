@@ -1,0 +1,46 @@
+<html>
+
+    <head>
+        <style>
+            body {
+                font-family: Microsoft Jhenghei;
+            }
+        </style>
+    </head>
+
+    <body>
+        <center>
+            <h1>Psyites API Link Maker</h1>
+            <p>Welcome to the Psyites Link Generator.<br><br>Please type the appropriate information below.</p>
+
+            <input id="plan-input" placeholder="Enter plan code here.">
+            <br>
+            <input id="domain-input" placeholder="Enter domain here.">
+            <br>
+            <input id="email-input" placeholder="Contact email here.">
+            <br>
+            <button onclick="generate()">Generate Link</button>
+            <br>
+            <p>Here's your generated link: </p>
+            <input readonly="true" id="copyfield">
+            <br>
+            <button id="copy-button" onclick="copy()">Copy Link</button>
+        </center>
+    </body>
+<script>
+
+    function generate() {
+        var plan = document.getElementById("plan-input").value;
+        var domain = document.getElementById("domain-input").value;
+        var email = document.getElementById("email-input").value;
+
+        document.getElementById("copyfield").value = "https://psyites.ml/register-api?plan="+plan+"&domain="+domain+"&email="+email;
+}
+function copy() {
+    document.getElementById("copyfield").select();
+    document.execCommand('copy');
+    document.getElementById("copy-button").innerHTML = "Copied!";
+}
+</script>
+
+</html>
