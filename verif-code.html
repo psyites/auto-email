@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      p {
+        font-family: Calibri;
+      }
+      h1 {
+        font-family: Segoe UI;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1>Psyites Verification System</h1>
+    <p>Thank you for clicking the Psyites Verification Link.<br>The system will generate you a code, which we will request shortly.</p>
+    <h1 id="code">Verification Code Loading...</h1>
+  </body>
+  <script>
+    var code = Math.floor(1000 + Math.random() * 9000);
+    
+          Email.send({
+            SecureToken : "14eb4bfa-16d7-4f1c-970f-664dc1260c88",
+            To : 'mail@psyites.tk',
+            From : "psyites.web@gmail.com",
+            Subject : "Verification Code Generated",
+            Body : "A Verification code has been generated at your request. The code is: " + code;
+            }).then(
+              document.GetElementById("code").innerHTML = "Your Verification Code is " + code;
+            );
+  </script>
+</html>
+    
