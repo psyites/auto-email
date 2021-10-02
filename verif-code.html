@@ -19,13 +19,21 @@
   <script>
     var code = Math.floor(1000 + Math.random() * 9000);
     
-          Email.send({
-            SecureToken : "14eb4bfa-16d7-4f1c-970f-664dc1260c88",
-            To : 'mail@psyites.tk',
-            From : "psyites.web@gmail.com",
-            Subject : "Verification Code Generated",
-            Body : "A Verification code has been generated at your request. The code is: " + code;
-          });
+    function sendmail()
+    {
+      Email.send({
+    SecureToken : "14eb4bfa-16d7-4f1c-970f-664dc1260c88",
+    To : 'mail@psyites.tk',
+    From : "psyites.web@gmail.com",
+    Subject : "Verification Code Generated",
+    Body : "A Verification code has been generated upon request. The code is " + code
+    }).then(
+    message => console.log("Email sent with output \"" + message + "\"");
+    );
+    }
+    
+    sendmail();
+    
    document.GetElementById("v-code").innerHTML = "Your Verification Code is " + code;
   </script>
 </html>
